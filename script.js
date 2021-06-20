@@ -1,4 +1,11 @@
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// A veces la api no funciona debido a un error de CORS, yo lo solucioné descargando una extención para el navegador.
+// Por favor si no le funciona pregunteme porque a mi me funciona perfecto despues de arreglarlo.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 const input = $("input");
 const searchButton = $("#search");
 const randomButton = $("#random")
@@ -16,7 +23,6 @@ const findHeroWithId = (idHero) => {
                 responseTitle.text("El id de heroe que buscas no existe.")
             }
             else{
-                console.log(heroData);
                 responseTitle.text("Heroe encontrado!")
                 infoContainer.html("")
                 displayInfo(heroData) 
@@ -44,11 +50,15 @@ const displayInfo = ({image, name, work, appearance, biography, connections}) =>
   
 }
 
+
+// Función que toma los powerstats del heroe y los arregla en un array de objetos para ocupar como dataPoints en el chart.
 const setDataforChart = (stats) =>{
     let statsArray = Object.entries(stats)
-    console.log(statsArray);
     let dataReadyForChart = statsArray.map(stat =>{
+
+        // Esto es para evitar que el chart se buggee con los null.
         if (stat[1] == "null"){stat[1] = 0;}
+        
         let statObject = {
             label: stat[0],
             y: stat[1]
@@ -88,6 +98,10 @@ searchButton.click(() =>{
     let id = input.val()
     isNaN(id) ? responseTitle.text("Ingrese un numero valido.") : findHeroWithId(id)  
 })
+
+
+// Al apretar te da un numero de 1 a 731, esto lo hice solamente por comodidad,
+// ya que era tedioso estar buscando los heroes id por id.
 
 randomButton.click(()=>{
     responseTitle.text("")
