@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet"> 
+    <!-- Jquery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min.js" integrity="sha512-VCHVc5miKoln972iJPvkQrUYYq7XpxXzvqNfiul1H4aZDwGBGC0lq373KNleaB2LpnC2a/iNfE5zoRYmB4TRDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- CSS style -->
+    <link rel="stylesheet" href="assets\style.css">
+
+    <title>Encuentra a tu hero</title>
+</head>
+<body>
+
+    <div class="input__container">
+        <input placeholder="346"> <button id="search">Buscar</button><button id="random">ID al azar</button>
+    </div>
+    <h1 id="responseTitle">Busca a tu heroe ingresando un numero!</h1>
+    <main class="main__container" id="#mainContainer"> 
+        <div class="card">    
+                <div class="card__photo" id="imgContainer">
+                    <img src="assets\img\sh2.jpg" alt="">
+                </div>
+                <div class="card__content" id="infoContainer">
+             
+
+                </div>
+        </div>
+        <div class="main__chart" id="chartContainer">
+        </div>
+    </main>
+
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
